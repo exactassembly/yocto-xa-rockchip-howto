@@ -12,6 +12,8 @@ services:
       dockerfile: Dockerfile
       args: 
         VARIANT: bullseye
+        USER_UID: 1000
+        USER_GID: 1000
     
     command: /bin/sh -c "while sleep 1000; do :; done"  
 
