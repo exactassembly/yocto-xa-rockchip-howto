@@ -1,0 +1,21 @@
+version: '1'
+
+volumes:
+  yocto-cooker-sstate-cache: {}
+  yocto-cooker-dl-cache:
+
+services:
+  app:
+    # Using a Dockerfile is optional, but included for completeness.
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args: 
+        VARIANT: bullseye
+    
+    command: /bin/sh -c "while sleep 1000; do :; done"  
+
+    volumes:
+      - ..:/workspaces:cached
+      - yocto-cooker-sstate-cache:/var/lib/sstate-cache
+      - yocto-cooker-dl-cache:/var/lib/dl-cache

@@ -1,0 +1,27 @@
+{
+    "name": "Yocto|Cooker",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "features": {
+        "ghcr.io/exactassembly/yocto-devcontainer-features/yocto-cooker" : {}
+    },
+    "containerEnv": {
+        "COOKER_MENU_DIR" : "/workspaces/dfs-system-software",
+        "COOKER_USE_DL_CACHE" : "true",
+        "COOKER_USE_SSTATE_CACHE" : "true"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mads-hartmann.bash-ide-vscode",
+                "EditorConfig.EditorConfig",
+                "EugenWeins.bitbake",
+				"yzhang.markdown-all-in-one",
+				"streetsidesoftware.code-spell-checker",
+				"DavidAnson.vscode-markdownlint",
+				"shd101wyy.markdown-preview-enhanced",
+				"bierner.github-markdown-preview"
+            ]
+        }
+    }
+}
