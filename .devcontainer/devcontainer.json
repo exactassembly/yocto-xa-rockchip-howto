@@ -5,6 +5,7 @@
     "features": {
         "ghcr.io/exactassembly/yocto-devcontainer-features/yocto-cooker" : {}
     },
+    "remoteUser": "vscode",
     "containerEnv": {
         "COOKER_MENU_DIR" : "/workspaces/dfs-system-software",
         "COOKER_USE_DL_CACHE" : "true",
