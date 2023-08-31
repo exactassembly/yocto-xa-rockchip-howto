@@ -10,7 +10,7 @@
     },
     "remoteUser": "vscode",
     "containerEnv": {
-        "COOKER_MENU_DIR" : "/workspaces/dfs-system-software",
+        "COOKER_MENU_DIR" : "/workspaces/yocto-vscode-howto",
         "COOKER_USE_DL_CACHE" : "true",
         "COOKER_USE_SSTATE_CACHE" : "true"
     },
