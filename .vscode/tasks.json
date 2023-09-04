@@ -1,0 +1,41 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Cooker-init",
+            "type": "shell",
+            "command": "/workspaces/yocto-vscode-howto/.vscode/cooker-init.sh",
+            "options": {
+                "cwd": "/home/vscode"
+            }
+        },
+        {
+            "label": "Cooker-qemu",
+            "type": "shell",
+            "command": "cooker shell qemu runqemu qemux86 slirp nographic",
+            "options": {
+                "cwd": "/home/vscode"
+            }
+        },
+        {
+            "label": "Cooker-broil",
+            "type": "shell",
+            "command": "cooker update; cooker generate; cooker build",
+            "options": {
+                "cwd": "/home/vscode"
+            },
+            "dependsOn": "Cooker-init"
+        },
+        {
+            "label": "Cooker-download",
+            "type": "shell",
+            "command": "cooker update; cooker generate; cooker build -d",
+            "options": {
+                "cwd": "/home/vscode"
+            },
+            "dependsOn": "Cooker-init"
+        }
+    ]
+}
