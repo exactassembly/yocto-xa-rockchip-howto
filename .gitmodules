@@ -1,0 +1,3 @@
+[submodule "meta-cl-mitysom"]
+	path = meta-cl-mitysom
+	url = https://github.com/exactassembly/meta-cl-mitysom.git
