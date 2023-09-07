@@ -13,7 +13,11 @@
         "COOKER_USE_DL_CACHE" : "true",
         "COOKER_USE_SSTATE_CACHE" : "true"
     },
-    "postCreateCommand": "sudo chown -R vscode:vscode /workspaces/",
+    "postCreateCommand": {
+        "workspace": "sudo chown -R vscode:vscode /workspaces/",
+        "dl-cache": "sudo chown -R vscode:vscode /var/lib/dl-cache",
+        "sstate-cache": "sudo chown -R vscode:vscode /var/lib/sstate-cache"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
