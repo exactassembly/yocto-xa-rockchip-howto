@@ -21,6 +21,7 @@
         },
         {
             "label": "Cooker-broil",
+            "group": "build",
             "type": "shell",
             "command": "cooker update; cooker generate; cooker build",
             "options": {
