@@ -6,7 +6,7 @@
 		{ "url": "git://git.yoctoproject.org/poky", 
 					"branch": "mickledore", "rev":"mickledore-4.2.3" },
 		{ "url": "git://git.openembedded.org/meta-openembedded", 
-					"branch": "mickledore", "rev":"57c516973978ca2667339bf1aae7dc722b5bcac7" },
+					"branch": "mickledore", "rev":"57c516973978ca2667339bf1aae7dc722b5bcac7" }
 	],
 
 	"layers" : [
@@ -26,8 +26,8 @@
 				],
 			"local.conf": [
 				"MACHINE                    = 'qemux86'           ",
-				"ENABLE_UART                = '1'                      "
+				"ENABLE_UART                = '1'                 "
 			]
-		},
+		}
 	}
 }
