@@ -9,6 +9,36 @@ To generate the default image in this repository, open a terminal in the devcont
 Alternatively use the provided VSCode tasks (Terminal->Run Task...) which
 will perform the necessary cooker initialization, download, and build steps.
 
+## Running Locally
+
+### Installation Requirements
+
+- Git
+- Docker/docker-compose/docker desktop
+- VSCode
+  - VSCode extension: dev containers
+
+### Starting the Devcontainer
+
+Note: Ensure that Docker-Desktop is running before continuing
+
+#### Option 1: Running from a local clone
+
+1. Clone git repository into a local folder
+2. In VSCode: open cloned repository in VSCode (File->open folder...)
+3. In VSCode: open the Command Palette (View->Command Palette...) and run: `Dev Containers: Reopen in Container`
+
+#### Option 2: Cloning into a container volume
+
+To Do
+
+### Building the image
+
+To generate the image in this repository, open a terminal in the devcontainer and run:
+> /opt/cooker/scripts/broiler.sh broil
+
+Alternatively, use the provided VSCode build task (Terminal->Run Build Task...).
+
 ## What is this stuff?
 
 This repo contains boilerplate structure necessary to start a devcontainer
