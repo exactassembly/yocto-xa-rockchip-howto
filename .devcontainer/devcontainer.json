@@ -10,9 +10,10 @@
     "remoteUser": "vscode",
     "workspaceFolder": "/workspaces/yocto-vscode",
     "containerEnv": {
-        "COOKER_MENU_DIR" : "/workspaces/yocto-vscode",
+        "COOKER_MENU_DIR" : "${containerWorkspaceFolder}",
         "COOKER_USE_DL_CACHE" : "true",
-        "COOKER_USE_SSTATE_CACHE" : "true"
+        "COOKER_USE_SSTATE_CACHE" : "true",
+        "CONTAINER_WORKSPACE_FOLDER" : "${containerWorkspaceFolder}"
     },
 
     "initializeCommand": "echo FOO=yocto-vscode > .devcontainer/.env",
@@ -20,8 +21,8 @@
     "postCreateCommand": {
         "dl-cache": "sudo chmod -R 777 /var/lib/dl-cache",
         "sstate-cache": "sudo chmod -R 777 /var/lib/sstate-cache",
-        "git": "sudo runuser -l vscode -c 'git config --global --add safe.directory /workspaces' ",
-        "symlink": "if [ -d /workspaces/${localWorkspaceFolderBasename} ]; then ; sudo ln -fs /workspaces/${localWorkspaceFolderBasename} /workspaces/yocto-vscode ; endif"
+        "git": "sudo runuser -l vscode -c 'git config --global --add safe.directory ${containerWorkspaceFolder}' ",
+        "symlink": "test ! -d /home/vscode/yocto-layers && (mkdir /home/vscode/yocto-layers) ; for f in ${containerWorkspaceFolder}/meta-*; do sudo ln -s $f /home/vscode/yocto-layers/ ; done"
 
     },
     

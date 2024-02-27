@@ -22,7 +22,7 @@
 		"qemu": {
 			"target": "core-image-minimal",
 			"layers" : [
-					"../../../workspaces/yocto-vscode/meta-howto"
+					"meta-howto"
 				],
 			"local.conf": [
 				"MACHINE                    = 'qemux86'           ",
