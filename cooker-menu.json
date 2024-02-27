@@ -15,14 +15,14 @@
 		"poky/meta-yocto-bsp",
 		"meta-openembedded/meta-oe",
 		"meta-openembedded/meta-python",
-		"meta-openembedded/meta-multimedia",
+		"meta-openembedded/meta-multimedia"
 	],
 
 	"builds" : {
 		"qemu": {
 			"target": "core-image-minimal",
 			"layers" : [
-					"../../../workspaces/meta-howto"
+					"meta-howto"
 				],
 			"local.conf": [
 				"MACHINE                    = 'qemux86'           ",
