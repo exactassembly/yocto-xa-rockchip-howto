@@ -8,12 +8,15 @@
             }
     },
     "remoteUser": "vscode",
-    "workspaceFolder": "/workspaces",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
     "containerEnv": {
-        "COOKER_MENU_DIR" : "/workspaces",
+        "COOKER_MENU_DIR" : "/workspaces/${localWorkspaceFolderBasename}",
         "COOKER_USE_DL_CACHE" : "true",
         "COOKER_USE_SSTATE_CACHE" : "true"
     },
+
+    "initializeCommand": "echo FOO=${localWorkspaceFolderBasename} > .devcontainer/.env",
+
     "postCreateCommand": {
         "dl-cache": "sudo chmod -R 777 /var/lib/dl-cache",
         "sstate-cache": "sudo chmod -R 777 /var/lib/sstate-cache",
