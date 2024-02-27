@@ -8,7 +8,7 @@
             }
     },
     "remoteUser": "vscode",
-    "workspaceFolder": "/workspaces/yocto-vscode",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}-local",
     "containerEnv": {
         "COOKER_MENU_DIR" : "${containerWorkspaceFolder}",
         "COOKER_USE_DL_CACHE" : "true",
@@ -16,8 +16,7 @@
         "CONTAINER_WORKSPACE_FOLDER" : "${containerWorkspaceFolder}"
     },
 
-    "initializeCommand": "echo FOO=yocto-vscode > .devcontainer/.env",
-
+    "initializeCommand": "echo FOO=${localWorkspaceFolderBasename}-local > .devcontainer/.env",
     "postCreateCommand": {
         "dl-cache": "sudo chmod -R 777 /var/lib/dl-cache",
         "sstate-cache": "sudo chmod -R 777 /var/lib/sstate-cache",
