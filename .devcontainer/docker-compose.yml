@@ -17,10 +17,10 @@ services:
     env_file:
       - ./.env
     environment:
-      - FOO=${FOO}
+      - WKS_FOLDER_BNAME=${WKS_FOLDER_BNAME}
     command: /bin/sh -c "while sleep 1000; do :; done"  
 
     volumes:
-      - ..:/workspaces/${FOO?err}:cached
+      - ..:/workspaces/${WKS_FOLDER_BNAME?err}:cached
       - yocto-cooker-sstate-cache:/var/lib/sstate-cache
       - yocto-cooker-dl-cache:/var/lib/dl-cache

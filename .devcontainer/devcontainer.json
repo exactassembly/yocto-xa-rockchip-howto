@@ -16,7 +16,7 @@
         "CONTAINER_WORKSPACE_FOLDER" : "${containerWorkspaceFolder}"
     },
 
-    "initializeCommand": "echo FOO=${localWorkspaceFolderBasename}-local > .devcontainer/.env",
+    "initializeCommand": "echo WKS_FOLDER_BNAME=${localWorkspaceFolderBasename}-local > .devcontainer/.env",
     "postCreateCommand": {
         "dl-cache": "sudo chmod -R 777 /var/lib/dl-cache",
         "sstate-cache": "sudo chmod -R 777 /var/lib/sstate-cache",
