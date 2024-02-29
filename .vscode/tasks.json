@@ -6,7 +6,7 @@
         {
             "label": "Update Meta Symlinks",
             "type": "shell",
-            "command": "for f in ${CONTAINER_WORKSPACE_FOLDER}/meta-*; do if [! -h /home/vscode/yocto-layers/$(basename $f) -a ! -e /home/vscode/yocto-layers/$(basename $f)]; then ln -s $f /home/vscode/yocto-layers/; fi ; done",
+            "command": "for f in ${CONTAINER_WORKSPACE_FOLDER}/meta-*; do if [ ! -h /home/vscode/yocto-layers/$(basename $f) -a ! -e /home/vscode/yocto-layers/$(basename $f) ]; then ln -s $f /home/vscode/yocto-layers/; fi ; done",
         },
         {
             "label": "Cooker-init",
