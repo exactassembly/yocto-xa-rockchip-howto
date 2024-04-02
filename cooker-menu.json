@@ -6,27 +6,27 @@
 		{ "url": "git://git.yoctoproject.org/poky", 
 					"branch": "mickledore", "rev":"mickledore-4.2.3" },
 		{ "url": "git://git.openembedded.org/meta-openembedded", 
-					"branch": "mickledore", "rev":"57c516973978ca2667339bf1aae7dc722b5bcac7" }
+					"branch": "mickledore", "rev":"57c516973978ca2667339bf1aae7dc722b5bcac7" },
+		{ "url": "git://git.yoctoproject.org/meta-arm",
+					"branch": "mickledore", "rev":"9bcc166bd5bb717aa86bb0464621a36abc51fa19"},
+		{ "url": "https://github.com/JeffyCN/meta-rockchip",
+					"branch": "mickledore", "rev":"015a580cc2d7cc2bec9875c34a9452dc2699aacf"}
 	],
 
 	"layers" : [
+		"meta-howto",
 		"poky/meta",
 		"poky/meta-poky",
 		"poky/meta-yocto-bsp",
-		"meta-openembedded/meta-oe",
-		"meta-openembedded/meta-python",
-		"meta-openembedded/meta-multimedia"
+		"JeffyCN/meta-rockchip",
+		"meta-openembedded/meta-oe"
 	],
 
 	"builds" : {
-		"qemu": {
+		"px30": {
 			"target": "core-image-minimal",
-			"layers" : [
-					"meta-howto"
-				],
 			"local.conf": [
-				"MACHINE                    = 'qemux86'           ",
-				"ENABLE_UART                = '1'                 "
+				"MACHINE                    = 'xa-rockchip-px30-evb'          "
 			]
 		}
 	}
