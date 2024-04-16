@@ -40,7 +40,6 @@ do_image_rockchip_gpt_img[depends] = "parted-native:do_populate_sysroot \
 	virtual/kernel:do_deploy \
 	virtual/bootloader:do_deploy"
 
-PER_CHIP_IMG_GENERATION_COMMAND:px30 = "generate_px30_loader1_image"
 PER_CHIP_IMG_GENERATION_COMMAND:rk3288 = "generate_rk3288_loader1_image"
 PER_CHIP_IMG_GENERATION_COMMAND:rock2-square = "generate_rock2_loader1_image"
 
@@ -137,13 +136,6 @@ EOF
 
 	# Burn Rootfs Partition
 	dd if=${IMG_ROOTFS} of=${GPTIMG} seek=${ROOTFS_START}
-
-}
-
-generate_px30_loader1_image () {
-
-	dd if=${DEPLOY_DIR_IMAGE}/idbloader.img-${MACHINE} of=${GPTIMG} conv=notrunc,fsync seek=64
-	dd if=${DEPLOY_DIR_IMAGE}/u-boot-${MACHINE}.itb of=${GPTIMG} conv=notrunc,fsync seek=16384
 
 }
 
