@@ -8,7 +8,7 @@ inherit image_types
 IMG_ROOTFS_TYPE = "ext4"
 IMG_ROOTFS = "${IMGDEPLOYDIR}/${IMAGE_LINK_NAME}.${IMG_ROOTFS_TYPE}"
 
-
+DEPENDS:px30 += " rockchip-loader"
 
 # This image depends on the rootfs image
 IMAGE_TYPEDEP:fixed-rockchip-gpt-img = "${IMG_ROOTFS_TYPE}"
