@@ -5,12 +5,14 @@
 	"sources" : [
 		{ "url": "git://git.yoctoproject.org/poky", 
 					"branch": "mickledore", "rev":"mickledore-4.2.3" },
+		{ "url": "git://git.openembedded.org/openembedded-core",
+					"branch":"mickledore", "rev":"23b5141400b2c676c806df3308f023f7c04e34e0"},
 		{ "url": "git://git.openembedded.org/meta-openembedded", 
 					"branch": "mickledore", "rev":"57c516973978ca2667339bf1aae7dc722b5bcac7" },
 		{ "url": "git://git.yoctoproject.org/meta-arm",
 					"branch": "mickledore", "rev":"9bcc166bd5bb717aa86bb0464621a36abc51fa19"},
-		{ "url": "https://github.com/JeffyCN/meta-rockchip",
-					"branch": "mickledore", "rev":"015a580cc2d7cc2bec9875c34a9452dc2699aacf"}
+		{ "url": "git://git.yoctoproject.org/meta-rockchip",
+					"branch": "mickledore", "rev":"5f06c7c018755b0bef6d6f4944ae25b5447535fc"}
 	],
 
 	"layers" : [
@@ -18,15 +20,19 @@
 		"poky/meta",
 		"poky/meta-poky",
 		"poky/meta-yocto-bsp",
-		"JeffyCN/meta-rockchip",
-		"meta-openembedded/meta-oe"
+		"meta-arm/meta-arm",
+		"meta-arm/meta-arm-toolchain",
+		"meta-openembedded/meta-oe",
+		"meta-rockchip"
 	],
 
 	"builds" : {
 		"px30": {
 			"target": "core-image-minimal",
 			"local.conf": [
-				"MACHINE                    = 'xa-rockchip-px30-evb'          "
+				"MACHINE                    = 'xa-rockchip-px30-evb'          ",
+				"ENABLE_UART                = '1' ",
+				"EXTRA_IMAGE_FEATURES:append = ' debug-tweaks' "
 			]
 		}
 	}
