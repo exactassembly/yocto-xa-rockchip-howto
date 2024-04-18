@@ -32,7 +32,7 @@
 			"local.conf": [
 				"MACHINE                    = 'xa-rockchip-px30-evb'          ",
 				"ENABLE_UART                = '1' ",
-				"EXTRA_IMAGE_FEATURES:append = ' debug-tweaks' "
+				"EXTRA_IMAGE_FEATURES:append = ' debug-tweaks ssh-server-dropbear' "
 			]
 		}
 	}
