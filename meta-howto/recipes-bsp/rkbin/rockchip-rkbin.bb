@@ -14,7 +14,7 @@ SRC_URI = "git://github.com/rockchip-linux/rkbin;protocol=https;branch=master"
 SRCREV = "a2a0b89b6c8c612dca5ed9ed8a68db8a07f68bc0"
 
 DEPENDS += " \
-    libusb-native \
+    coreutils-native \
     virtual/bootloader \
     "
 
@@ -42,7 +42,7 @@ RKBIN_DDR_UART_IOMUX ?= "1"
 RKBIN_DDR_UART_BAUDRATE ?= "115200"
 
 RKBIN_DDR_PATH ?= "bin/rk33/px30_ddr_333MHz_v2.09.bin"
-RKBIN_USBPLUG_PATH ?= "bin/rk33/px30_usbplug_v1.20.bin"
+RKBIN_USBPLUG_PATH ?= "bin/rk33/px30_usbplug_v1.36.bin"
 
 do_configure() {
     # add config files in here as well as making uart ddr selections
@@ -64,10 +64,15 @@ do_configure() {
 }
 
 do_compile() {
-    # Your code here
-    # run boot_merger to create loader 
     cd ${S}
-    ./tools/rkdeveloptool pack
+
+    # fixup u-boot spl and tpl
+    printf "RK33" | dd conv=notrunc bs=4 count=1 of=u-boot-tpl.bin
+    truncate -s %2048 u-boot-tpl.bin
+    truncate -s %2048 u-boot-spl.bin
+
+    # run boot_merger to create loader 
+    ./tools/boot_merger config.ini
 }
 
 do_install() {
