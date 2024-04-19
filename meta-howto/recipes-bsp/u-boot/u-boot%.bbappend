@@ -2,7 +2,10 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += " file://00_rockusb.cfg"
+SRC_URI += "file://u-boot-initk-env.cmd"
+SRC_URI += "file://01_use_default_env.cfg"
 
+DEPENDS:append = " xxd-native"
 
 do_deploy:append:px30() {
     install -D -m 644 ${B}/spl/u-boot-spl.bin ${DEPLOYDIR}/u-boot-spl-${MACHINE}-${PV}-${PR}.bin
