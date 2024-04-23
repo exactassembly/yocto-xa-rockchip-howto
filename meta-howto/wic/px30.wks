@@ -8,7 +8,7 @@
 #   rootfs      262144          -
 
 
-part loader1    --label loader1    --offset 64s     --fixed-size 4000K      --source rawcopy            --fstype=none   --sourceparams="file=px30_loader_uboot.bin"
+part loader1    --label loader1    --offset 64s     --fixed-size 4000K      --source rawcopy            --fstype=none   --sourceparams="file=${SPL_BINARY}"
 part reserved1  --label reserved1  --offset 8064s   --fixed-size 64K                                    --fstype=none
 part reserved2  --label reserved2  --offset 8192s   --fixed-size 4096K                                  --fstype=none
 part loader2    --label loader2    --offset 16384s  --fixed-size 4096K      --source rawcopy            --fstype=none   --sourceparams="file=u-boot.${UBOOT_SUFFIX}"
