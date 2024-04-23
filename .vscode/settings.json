@@ -1,0 +1,37 @@
+{
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/sources/poky/bitbake/lib",
+        "${workspaceFolder}/sources/poky/meta/lib",
+        "~/yocto-layers/poky/bitbake/lib",
+        "~/yocto-layers/poky/meta/lib",
+        "/home/vscode/yocto-layers/poky/bitbake/lib",
+        "/home/vscode/yocto-layers/poky/meta/lib",
+        "/lib",
+        "../meta/lib"
+    ],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/sources/poky/bitbake/lib",
+        "${workspaceFolder}/sources/poky/meta/lib",
+        "~/yocto-layers/poky/bitbake/lib",
+        "~/yocto-layers/poky/meta/lib",
+        "/home/vscode/yocto-layers/poky/bitbake/lib",
+        "/home/vscode/yocto-layers/poky/meta/lib",
+        "/lib",
+        "../meta/lib"
+    ],
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off",
+        "files.trimTrailingWhitespace": false
+    },
+    "[shellscript]": {
+        "files.eol": "\n",
+        "files.trimTrailingWhitespace": false
+    },
+    "files.associations": {
+        "*.conf": "bitbake",
+        "*.inc": "bitbake"
+    },
+    "task.saveBeforeRun": "always"
+}

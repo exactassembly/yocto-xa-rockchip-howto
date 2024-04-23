@@ -1,3 +1,6 @@
 [submodule "meta-cl-mitysom"]
 	path = meta-cl-mitysom
 	url = https://github.com/exactassembly/meta-cl-mitysom.git
+[submodule "meta-xa-rockchip"]
+	path = meta-xa-rockchip
+	url = https://github.com/exactassembly/meta-xa-rockchip

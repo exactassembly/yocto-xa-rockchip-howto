@@ -16,7 +16,6 @@
 	],
 
 	"layers" : [
-		"meta-howto",
 		"poky/meta",
 		"poky/meta-poky",
 		"poky/meta-yocto-bsp",
@@ -29,6 +28,10 @@
 	"builds" : {
 		"px30": {
 			"target": "core-image-minimal",
+			"layers": [
+				"meta-howto",
+				"meta-xa-rockchip"
+			],
 			"local.conf": [
 				"MACHINE                    = 'firefly-px30'          ",
 				"ENABLE_UART                = '1' ",
